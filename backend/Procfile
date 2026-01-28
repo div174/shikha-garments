@@ -1,0 +1,1 @@
+web: gunicorn shikha_garments.wsgi
