@@ -26,7 +26,14 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='products')
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.CharField(max_length=500, blank=True, null=True, help_text="URL of the product image")
+    image_url = models.URLField(max_length=500, blank=True, null=True, help_text="External URL of the product image")
+    image_file = models.ImageField(upload_to='products/', blank=True, null=True, help_text="Upload a product image")
+
+    @property
+    def image_url_display(self):
+        if self.image_file:
+            return self.image_file.url
+        return self.image_url
     # Storing sizes as a comma-separated string for simplicity in this version, 
     # or could use JSONField if DB supports it (SQLite does in modern Django).
     # Using CharField for broad compatibility.

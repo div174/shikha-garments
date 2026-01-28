@@ -17,6 +17,8 @@ class ProductSerializer(serializers.ModelSerializer):
     subcategory_name = serializers.ReadOnlyField(source='subcategory.name')
     category_name = serializers.ReadOnlyField(source='subcategory.category.name')
 
+    image = serializers.URLField(source='image_url_display', read_only=True)
+
     class Meta:
         model = Product
         fields = '__all__'
