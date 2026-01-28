@@ -28,3 +28,8 @@ dist/
 # IDEs
 .vscode/
 .idea/
+
+# Local Scripts & Data
+run_all.ps1
+backend/populate_db.py
+backend/products_fixture.json
