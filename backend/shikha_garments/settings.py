@@ -30,15 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG') == 'True'
 
-ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-
-if not DEBUG:
-    ALLOWED_HOSTS += ['*']
-else:
-    ALLOWED_HOSTS += ['localhost', '127.0.0.1', '192.168.56.1', '10.171.156.2']
+ALLOWED_HOSTS = ['shikhagarments.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
