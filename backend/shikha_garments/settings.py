@@ -149,7 +149,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "http://192.168.56.1:5173",
     "http://10.171.156.2:5173",
+    "https://shikhagarments.vercel.app",
+    "https://shikha-garments.vercel.app",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = ['https://shikhagarments.onrender.com']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
