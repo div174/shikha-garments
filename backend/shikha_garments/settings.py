@@ -151,6 +151,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://10.171.156.2:5173",
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://shikhagarments.onrender.com']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
