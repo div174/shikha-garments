@@ -20,7 +20,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ('price', 'is_in_stock')
     
     def image_preview(self, obj):
-        if obj.image:
-             return format_html('<img src="{}" style="width: 50px; height: 50px; object-fit: cover;" />', obj.image)
+        if obj.image_url_display:
+             return format_html('<img src="{}" style="width: 50px; height: 50px; object-fit: cover;" />', obj.image_url_display)
         return "No Image"
     image_preview.short_description = 'Image'
